@@ -5,7 +5,7 @@
   "main": "dev-server.js",
   "bin": {
     "dev-server": "./dev-server.js"
-  }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
