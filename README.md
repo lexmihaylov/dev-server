@@ -9,6 +9,7 @@ npm install -g https://github.com/lexmihaylov/dev-server.git
 # configurations
 You just need to create a `.devserverrc` file inside your project folder.
 
+### example:
 ```json
 {
     "proxies": [
