@@ -1,0 +1,36 @@
+{
+  "name": "dev-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dev-server.js",
+  "bin": {
+    "dev-server": "./dev-server.js"
+  }
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lexmihaylov/dev-server.git"
+  },
+  "keywords": [
+    "http-server",
+    "proxy",
+    "dev-server"
+  ],
+  "author": "Alexander Mihaylov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lexmihaylov/dev-server/issues"
+  },
+  "homepage": "https://github.com/lexmihaylov/dev-server#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "connect": "^3.5.0",
+    "errorhandler": "^1.4.3",
+    "http-proxy-middleware": "^0.17.2",
+    "morgan": "^1.7.0",
+    "object-merge": "^2.5.1",
+    "serve-static": "^1.11.1"
+  }
+}
