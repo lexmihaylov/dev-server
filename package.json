@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/lexmihaylov/dev-server#readme",
   "dependencies": {
-    "body-parser": "^1.15.2",
     "connect": "^3.5.0",
     "errorhandler": "^1.4.3",
     "http-proxy-middleware": "^0.17.2",
