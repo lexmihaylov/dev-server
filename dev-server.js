@@ -2,7 +2,6 @@
 
 var connect = require('connect');
 var http = require('http');
-var bodyParser = require('body-parser');
 var serveStatic = require('serve-static');
 var errorHandler = require('errorhandler');
 var morgan = require('morgan');
@@ -30,7 +29,6 @@ try {
 
 var server = connect();
 
-server.use(bodyParser.urlencoded());
 if(config.errorHandler) server.use(errorHandler());
 server.use(morgan(config.logLevel));
 
