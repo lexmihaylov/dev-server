@@ -10,7 +10,7 @@ var proxy = require('http-proxy-middleware');
 var merge = require('object-merge');
 var readFile = require('fs').readFileSync;
 
-var serverPath = process.argv[2];
+var serverPath = process.argv[2] || './';
 
 var config = {
     proxies: [],
