@@ -28,6 +28,7 @@
     "connect": "^3.5.0",
     "errorhandler": "^1.4.3",
     "http-proxy-middleware": "^0.17.2",
+    "minimist": "^1.2.0",
     "morgan": "^1.7.0",
     "object-merge": "^2.5.1",
     "serve-static": "^1.11.1"
