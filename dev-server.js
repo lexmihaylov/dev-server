@@ -8,8 +8,20 @@ var morgan = require('morgan');
 var proxy = require('http-proxy-middleware');
 var merge = require('object-merge');
 var readFile = require('fs').readFileSync;
+var args = require('minimist')(process.argv.slice(2));
 
-var serverPath = process.argv[2] || './';
+const FILE_EXTENSION = '.devserverrc';
+const DEFAULT_FILE_NAME = '';
+const DEFAULT_SERVER_PATH = './';
+
+// args._ contains all unnamed parameters
+var fileName = args._[0] || args['client'] || DEFAULT_FILE_NAME;
+var serverPath = args['host'] || DEFAULT_SERVER_PATH;
+var configFileName = fileName + FILE_EXTENSION;
+
+var fullConfigPath = serverPath.charAt(serverPath.length - 1) !== '/'
+    ? serverPath + '/' + configFileName
+    : serverPath + configFileName
 
 var config = {
     proxies: [],
@@ -21,19 +33,19 @@ var config = {
 try {
     config = merge(
         config,
-        JSON.parse(readFile(serverPath + './.devserverrc').toString())
+        JSON.parse(readFile(fullConfigPath).toString())
     );
-} catch(e) {
-    console.log('WARNING: No project configurations (`.devserverrc`).');
+} catch (e) {
+    console.log('WARNING: No project configurations found (`' + fullConfigPath + '`).');
 }
 
 var server = connect();
 
-if(config.errorHandler) server.use(errorHandler());
+if (config.errorHandler) server.use(errorHandler());
 server.use(morgan(config.logLevel));
 
-if(config.proxies && config.proxies.length > 0) {
-    for(var i = 0; i < config.proxies.length; i++) {
+if (config.proxies && config.proxies.length > 0) {
+    for (var i = 0; i < config.proxies.length; i++) {
         server.use(proxy(
             config.proxies[i].context,
             config.proxies[i].config
