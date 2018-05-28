@@ -2,17 +2,19 @@
 
 A simple http server with proxy capabilities.
 
-## Installation
+## Getting Started
+
+### Installation
 
 ```bash
 npm install -g https://github.com/lexmihaylov/dev-server.git
 ```
 
-## Configuration files
+### Configuration files
 
 You just need to create a `.devserverrc` file inside your project folder.
 
-### Example
+#### Example
 
 ```json
 {
@@ -31,9 +33,9 @@ You just need to create a `.devserverrc` file inside your project folder.
 }
 ```
 
-## Running
+## Usage
 
-### Example with different client configurations
+### Different client configurations
 
 Configuration file: `client1.devserverrc`
 
@@ -47,8 +49,13 @@ OR
 dev-server --client client1
 ```
 
-### Example with different host
+### Different host
 
 ```bash
 dev-server --host "./../"
 ```
+
+## Supported Parameters
+
+- `--client`
+- `--host`
